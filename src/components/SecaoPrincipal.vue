@@ -67,7 +67,7 @@ export default {
     .moedasPrincipais {
         div {
             section {
-                background-color: $color1;
+                background-color: rgba($color1, .9);
                 padding: 10px 20px;
 
                 .headerCripto {
