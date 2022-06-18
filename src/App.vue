@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg w-100 p-md-3 sticky-top" :class="scrolled" @scroll.passive="stickyTop()">
+    <nav class="navbar navbar-expand-lg w-100 p-3 sticky-top" :class="scrolled" @scroll.passive="stickyTop()">
         <div class="container-fluid">
             <!-- logo -->
             <a href="#" class="navbar-brand brand d-flex align-items-center"><img src="@/assets/img/logo.png" alt="Logo" width="30" class="me-1">Cripto<span>Moeda</span></a>
