@@ -4,19 +4,37 @@
         <h2 class="text-center fw-bold mt-4">Principais moedas do mercado!</h2>
         <!-- principais moedas do mercado -->
         <div class="row container mx-auto g-1 justify-content-between px-2 moedasPrincipais text-white pb-4">
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <section class="rounded">
                     <div class="headerCripto">
                         <span class="imgCripto"><i class="fa-brands fa-bitcoin"></i></span>
                         <span class="tituloCripto">{{ criptoCurrency[0].name }} <span>{{ criptoCurrency[0].code }}</span></span>
                     </div>
+                    <hr class="mt-2">
+                    <div class="secaoCripto">
+                        <span class="itemCripto">Valor <span>{{ criptoCurrency[0].price }}</span></span>
+                        <span class="itemCripto">24H% <span>{{ criptoCurrency[0].day }}</span></span>
+                        <span class="itemCripto">7d% <span>{{ criptoCurrency[0].week }}</span></span>
+                        <p class="w-100"></p>
+                        <span class="itemCripto">Volume <span>{{ criptoCurrency[0].volume }}</span></span>
+                        <span class="itemCripto">Valor de mercado <span>{{ criptoCurrency[0].marketCap }}</span></span>
+                    </div>
                 </section>
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <section class="rounded">
                     <div class="headerCripto">
                         <span class="imgCripto"><i class="fa-brands fa-ethereum"></i></span>
                         <span class="tituloCripto">{{ criptoCurrency[1].name }} <span>{{ criptoCurrency[1].code }}</span></span>
+                    </div>
+                    <hr class="mt-2">
+                    <div class="secaoCripto">
+                        <span class="itemCripto">Valor <span>{{ criptoCurrency[1].price }}</span></span>
+                        <span class="itemCripto">24H% <span>{{ criptoCurrency[1].day }}</span></span>
+                        <span class="itemCripto">7d% <span>{{ criptoCurrency[1].week }}</span></span>
+                        <p class="w-100"></p>
+                        <span class="itemCripto">Volume <span>{{ criptoCurrency[1].volume }}</span></span>
+                        <span class="itemCripto">Valor de mercado <span>{{ criptoCurrency[1].marketCap }}</span></span>
                     </div>
                 </section>
             </div>
@@ -50,10 +68,9 @@ export default {
         div {
             section {
                 background-color: $color1;
-                padding: 10px;
+                padding: 10px 20px;
 
                 .headerCripto {
-
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -80,12 +97,12 @@ export default {
                             }
                         }
                     }
-    
+
                     .tituloCripto {
                         font-weight: 500;
                         font-size: 1.2em;
                         color: $color2;
-    
+
                         > span {
                             font-weight: 400;
                             opacity: .8;
@@ -93,6 +110,24 @@ export default {
                         }
                     }
                 }
+
+                .secaoCripto {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+
+                    .itemCripto {
+                        font-weight: 500;
+                        color: $color2;
+
+                        span {
+                            color: $color3;
+                            margin-left: 5px;
+                        }
+                    }
+                }
+
 
             }
 

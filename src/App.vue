@@ -50,8 +50,8 @@ export default {
                     name: 'Bitcoin',
                     code: 'BTC',
                     price: '17,968.59',
-                    day: '12.69%',
-                    week: '37.13',
+                    day: '-12.69%',
+                    week: '-37.13',
                     marketCap: '342,677,468,113',
                     volume: '34,154,900,735'
                 },
@@ -60,8 +60,8 @@ export default {
                     name: 'Ethereum',
                     code: 'ETH',
                     price: '910.99',
-                    day: '16.18%',
-                    week: '41.04%',
+                    day: '-16.18%',
+                    week: '-41.04%',
                     marketCap: '110,431,019,114',
                     volume: '16,827,166,935'
                 }
