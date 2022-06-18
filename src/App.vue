@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg w-100 p-md-3 sticky-top">
+    <nav class="navbar navbar-expand-lg w-100 p-md-3 sticky-top" :class="scrolled" @scroll.passive="stickyTop()">
         <div class="container-fluid">
             <!-- logo -->
             <a href="#" class="navbar-brand brand d-flex align-items-center"><img src="@/assets/img/logo.png" alt="Logo" width="30" class="me-1">Cripto<span>Moeda</span></a>
@@ -44,6 +44,8 @@ export default {
     name: 'App',
     data() {
         return {
+            scrolled: '',
+            
             criptoCurrency: [
                 {
                     id: 1,
@@ -66,6 +68,23 @@ export default {
                     volume: '16,827,166,935'
                 }
             ],
+        }
+    },
+    // ler a rolagem da pagina
+    created() {
+        window.addEventListener("scroll", this.stickyTop);
+    },
+    unmounted() {
+        window.removeEventListener("scroll", this.stickyTop);
+    },
+    // animacao ao rolar a pagina
+    methods: {
+        stickyTop() {
+            console.log(window.scrollY)
+            if(window.scrollY >= 30)
+                this.scrolled = 'scrolled'
+            else
+                this.scrolled = ''
         }
     },
     components: {
@@ -102,6 +121,14 @@ export default {
     // cabecalho
     nav.navbar {
         background-color: $color1;
+
+        // animacao ao rolar a pagina
+        transition: padding .2s ease;
+
+        &.scrolled {
+            padding-top: 5px!important;
+            padding-bottom: 5px!important;
+        }
         
         
         // logo
