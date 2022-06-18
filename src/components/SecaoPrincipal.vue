@@ -11,13 +11,15 @@
                     <img src="../assets/bg-header.jpg" class="d-block w-100" alt="...">
                     <h4>Você quer saber sobre a cotação das suas criptomoedas preferidas?</h4>
                 </div>
-                <div class="carousel-item">
-                    <img src="../assets/bg-header2.jpg" class="d-block w-100" alt="...">
-                    <h4>Não quer burocracia? Não perca tempo, e venha com a gente!</h4>
-                </div>
+                
                 <div class="carousel-item">
                     <img src="../assets/bg-header3.jpg" class="d-block w-100" alt="...">
                     <h4><a href="#criptomoedas">Clique aqui para ir para ver as cotações.</a></h4>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="../assets/bg-header2.jpg" class="d-block w-100" alt="...">
+                    <h4>Não quer burocracia? Não perca tempo, e venha com a gente!</h4>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#coverBg" data-bs-slide="prev">
