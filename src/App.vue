@@ -1,18 +1,35 @@
 <template>
-    <header class="d-flex justify-content-between p-3">
-        <!-- logo -->
-        <a href="#" class="brand d-flex align-items-center"><img src="@/assets/logo.png" alt="Logo" width="30" class="me-1">Cripto<span>Moeda</span></a>
+    <nav class="navbar navbar-expand-lg w-100 p-md-3">
+        <div class="container-fluid">
+            <!-- logo -->
+            <a href="#" class="navbar-brand brand d-flex align-items-center"><img src="@/assets/logo.png" alt="Logo" width="30" class="me-1">Cripto<span>Moeda</span></a>
+            
+            <!-- botao para abrir o menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+            </button>
 
-
-        
-        <!-- redes sociais -->
-        <div class="d-flex align-items-center text-white socialNetwork">
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-google-plus-g me-0"></i></a>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Início</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Criptos</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre</a>
+                    </li>
+                </ul>
+                <!-- redes sociais -->
+                <div class="d-flex align-items-center text-white socialNetwork navbar-text">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-google-plus-g me-0"></i></a>
+                </div>
+            </div>
         </div>
-
-    </header>
+    </nav>
     <SecaoPrincipal class="container" />
 </template>
 
@@ -65,8 +82,9 @@ export default {
     }
 
     // cabecalho
-    header {
+    nav.navbar {
         background-color: $color1;
+        
         
         // logo
         .brand {
@@ -77,6 +95,34 @@ export default {
 
             span {
                 color: $color3;
+            }
+
+            &:hover {
+                color: $color2;
+                opacity: .8;
+            }
+        }
+
+        // botao para abrir o menu
+        .navbar-toggler {
+            i {
+                color: $color3;
+                font-size: 1.3em;
+            }
+        }
+
+        // menu de navecagao
+        #navbarText {
+            .navbar-nav {
+                .nav-item {
+                    .nav-link {
+                        color: $color2;
+
+                        &.active {
+                            opacity: .7;
+                        }
+                    }
+                }
             }
         }
 
