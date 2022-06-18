@@ -30,11 +30,15 @@
             </div>
         </div>
     </nav>
+
+    <SecaoHeader />
+    
     <SecaoPrincipal class="container" />
 </template>
 
 <script>
 import SecaoPrincipal from './components/SecaoPrincipal.vue'
+import SecaoHeader from './components/SecaoHeader.vue'
 
 export default {
     name: 'App',
@@ -44,6 +48,7 @@ export default {
         }
     },
     components: {
+        SecaoHeader,
         SecaoPrincipal
     },
 
