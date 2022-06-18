@@ -15,7 +15,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Início</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Criptos</a>
+                    <a class="nav-link" href="#">Criptomoedas</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#">Sobre</a>
