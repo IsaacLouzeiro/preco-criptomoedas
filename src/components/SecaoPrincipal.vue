@@ -17,7 +17,7 @@
                         <span class="itemCripto">7d% <span>{{ criptoCurrency[0].week }}</span></span>
                         <p class="w-100"></p>
                         <span class="itemCripto">Volume <span>{{ criptoCurrency[0].volume }}</span></span>
-                        <span class="itemCripto">Valor de mercado <span>{{ criptoCurrency[0].marketCap }}</span></span>
+                        <span class="itemCripto">Cap. de mercado <span>{{ criptoCurrency[0].marketCap }}</span></span>
                     </div>
                 </section>
             </div>
@@ -34,7 +34,7 @@
                         <span class="itemCripto">7d% <span>{{ criptoCurrency[1].week }}</span></span>
                         <p class="w-100"></p>
                         <span class="itemCripto">Volume <span>{{ criptoCurrency[1].volume }}</span></span>
-                        <span class="itemCripto">Valor de mercado <span>{{ criptoCurrency[1].marketCap }}</span></span>
+                        <span class="itemCripto">Cap. de mercado <span>{{ criptoCurrency[1].marketCap }}</span></span>
                     </div>
                 </section>
             </div>
