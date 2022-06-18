@@ -123,6 +123,12 @@ export default {
         background-position: center;
     }
 
+    h2 {
+        @media only screen and (max-width: 768px) {
+            font-size: 1.5em;    
+        }
+    }
+
     // cabecalho
     nav.navbar {
         background-color: $color1;
