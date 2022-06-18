@@ -51,7 +51,7 @@ export default {
                     code: 'BTC',
                     price: '17,968.59',
                     day: '-12.69%',
-                    week: '-37.13',
+                    week: '-37.13%',
                     marketCap: '342,677,468,113',
                     volume: '34,154,900,735'
                 },

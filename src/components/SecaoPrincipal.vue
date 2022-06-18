@@ -14,10 +14,12 @@
                     <div class="secaoCripto">
                         <span class="itemCripto">Valor <span>{{ criptoCurrency[0].price }}</span></span>
                         <span class="itemCripto">24H% <span>{{ criptoCurrency[0].day }}</span></span>
-                        <span class="itemCripto">7d% <span>{{ criptoCurrency[0].week }}</span></span>
-                        <p class="w-100"></p>
+                        <p class="w-100 m-1"></p>
                         <span class="itemCripto">Volume <span>{{ criptoCurrency[0].volume }}</span></span>
-                        <span class="itemCripto">Cap. de mercado <span>{{ criptoCurrency[0].marketCap }}</span></span>
+                        <span class="itemCripto">7d% <span>{{ criptoCurrency[0].week }}</span></span>
+                        <p class="w-100 m-0"></p>
+                        <p class="m-1"> &nbsp;</p>
+                        <span class="itemCripto">Capitalizado de mercado <span>{{ criptoCurrency[0].marketCap }}</span></span>
                     </div>
                 </section>
             </div>
@@ -31,10 +33,12 @@
                     <div class="secaoCripto">
                         <span class="itemCripto">Valor <span>{{ criptoCurrency[1].price }}</span></span>
                         <span class="itemCripto">24H% <span>{{ criptoCurrency[1].day }}</span></span>
-                        <span class="itemCripto">7d% <span>{{ criptoCurrency[1].week }}</span></span>
-                        <p class="w-100"></p>
+                        <p class="w-100 m-1"></p>
                         <span class="itemCripto">Volume <span>{{ criptoCurrency[1].volume }}</span></span>
-                        <span class="itemCripto">Cap. de mercado <span>{{ criptoCurrency[1].marketCap }}</span></span>
+                        <span class="itemCripto">7d% <span>{{ criptoCurrency[1].week }}</span></span>
+                        <p class="w-100 m-0"></p>
+                        <p class="m-1"> &nbsp;</p>
+                        <span class="itemCripto">Capitalizado de mercado <span>{{ criptoCurrency[1].marketCap }}</span></span>
                     </div>
                 </section>
             </div>
