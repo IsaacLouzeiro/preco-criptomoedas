@@ -1,7 +1,7 @@
 <template>
     <!-- cabecalho da parte principal -->
     <header class="pt-2">
-        <div id="coverBg" class="container px-1 carousel slide rounded text-white" data-bs-ride="true">
+        <div id="coverBg" class="container px-2 carousel slide rounded text-white" data-bs-ride="true">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#coverBg" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#coverBg" data-bs-slide-to="1" aria-label="Slide 2"></button>
