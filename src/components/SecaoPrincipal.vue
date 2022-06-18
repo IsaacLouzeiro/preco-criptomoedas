@@ -9,15 +9,15 @@
             <div class="carousel-inner rounded">
                 <div class="carousel-item active">
                     <img src="../assets/bg-header.jpg" class="d-block w-100" alt="...">
-                    <h4 class="text-center">Você quer saber sobre a cotação das suas criptomoedas preferidas?</h4>
+                    <h4>Você quer saber sobre a cotação das suas criptomoedas preferidas?</h4>
                 </div>
                 <div class="carousel-item">
-                    <img src="../assets/bg-header.jpg" class="d-block w-100" alt="...">
-                    <h4 class="text-center">Você precisa saber sobre a cotação das suas criptomoedas preferidas?</h4>
+                    <img src="../assets/bg-header2.jpg" class="d-block w-100" alt="...">
+                    <h4>Não quer burocracia? Não perca tempo, e venha com a gente!</h4>
                 </div>
                 <div class="carousel-item">
-                    <img src="../assets/bg-header.jpg" class="d-block w-100" alt="...">
-                    <h4 class="text-center">Você precisa saber sobre a cotação das suas criptomoedas preferidas?</h4>
+                    <img src="../assets/bg-header3.jpg" class="d-block w-100" alt="...">
+                    <h4><a href="#criptomoedas">Clique aqui para ir para ver as cotações.</a></h4>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#coverBg" data-bs-slide="prev">
@@ -72,7 +72,14 @@ export default {
                         right: 0;
                         bottom: 0;
                         display: flex;
+                        justify-content: center;
                         align-items: center;
+                        text-align: center;
+
+                        a {
+                            text-decoration: none;
+                            color: $color2;
+                        }
 
                         @media only screen and (max-width: 765px) {
                             font-size: 1.1em;
