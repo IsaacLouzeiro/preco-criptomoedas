@@ -44,6 +44,7 @@ export default {
     name: 'App',
     data() {
         return {
+            // para animacao de rolagem da pagina
             scrolled: '',
             
             criptoCurrency: [
@@ -124,7 +125,6 @@ export default {
 
         // animacao ao rolar a pagina
         transition: padding .2s ease;
-
         &.scrolled {
             padding-top: 5px!important;
             padding-bottom: 5px!important;
