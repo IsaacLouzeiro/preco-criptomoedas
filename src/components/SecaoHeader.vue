@@ -9,17 +9,17 @@
             </div>
             <div class="carousel-inner rounded">
                 <div class="carousel-item active">
-                    <img src="../assets/bg-header.jpg" class="d-block w-100" alt="...">
+                    <img src="../assets/img/bg-header.jpg" class="d-block w-100" alt="...">
                     <h4>Você quer saber sobre a cotação das suas criptomoedas preferidas?</h4>
                 </div>
                 
                 <div class="carousel-item">
-                    <img src="../assets/bg-header3.jpg" class="d-block w-100" alt="...">
+                    <img src="../assets/img/bg-header3.jpg" class="d-block w-100" alt="...">
                     <h4><a href="#criptomoedas">Clique aqui para ver as cotações.</a></h4>
                 </div>
     
                 <div class="carousel-item">
-                    <img src="../assets/bg-header2.jpg" class="d-block w-100" alt="...">
+                    <img src="../assets/img/bg-header2.jpg" class="d-block w-100" alt="...">
                     <h4>Não quer burocracia? Não perca tempo, e venha com a gente!</h4>
                 </div>
             </div>
@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    @import '../assets/cores.scss';
+    @import '../assets/sass/cores.scss';
 
     // cabecalho da parte principal
     #coverBg {

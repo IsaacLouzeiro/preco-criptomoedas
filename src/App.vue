@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg w-100 p-md-3">
         <div class="container-fluid">
             <!-- logo -->
-            <a href="#" class="navbar-brand brand d-flex align-items-center"><img src="@/assets/logo.png" alt="Logo" width="30" class="me-1">Cripto<span>Moeda</span></a>
+            <a href="#" class="navbar-brand brand d-flex align-items-center"><img src="@/assets/img/logo.png" alt="Logo" width="30" class="me-1">Cripto<span>Moeda</span></a>
             
             <!-- botao para abrir o menu -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +63,7 @@ export default {
 </script>
 
 <style lang="scss">
-    @import 'assets/cores.scss';
+    @import 'assets/sass/cores.scss';
     @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
 
     * {
@@ -80,7 +80,7 @@ export default {
     }
 
     #app {
-        background-image: url(./assets/bg.svg);
+        background-image: url(./assets/img/bg.svg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;

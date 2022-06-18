@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    @import '../assets/cores.scss';
+    @import '../assets/sass/cores.scss';
 
     #secaoPrincipal {
         color: $color1;
