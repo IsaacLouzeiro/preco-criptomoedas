@@ -82,11 +82,12 @@ export default {
                     }
     
                     .tituloCripto {
-                        font-weight: bold;
+                        font-weight: 500;
                         font-size: 1.2em;
                         color: $color2;
     
                         > span {
+                            font-weight: 400;
                             opacity: .8;
                             color: $color3;
                         }
