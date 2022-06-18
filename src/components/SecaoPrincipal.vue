@@ -14,7 +14,7 @@
                 
                 <div class="carousel-item">
                     <img src="../assets/bg-header3.jpg" class="d-block w-100" alt="...">
-                    <h4><a href="#criptomoedas">Clique aqui para ir para ver as cotações.</a></h4>
+                    <h4><a href="#criptomoedas">Clique aqui para ver as cotações.</a></h4>
                 </div>
 
                 <div class="carousel-item">
