@@ -15,7 +15,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Início</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Criptomoedas</a>
+                    <a class="nav-link" href="#secaoCriptomoedas">Criptomoedas</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#">Sobre</a>
@@ -34,11 +34,14 @@
     <SecaoHeader />
     
     <SecaoPrincipal class="container" :criptoCurrency="criptoCurrency" />
+    
+    <SecaoCriptomoedas class="container" />
 </template>
 
 <script>
 import SecaoPrincipal from './components/SecaoPrincipal.vue'
 import SecaoHeader from './components/SecaoHeader.vue'
+import SecaoCriptomoedas from './components/SecaoCriptomoedas.vue'
 
 export default {
     name: 'App',
@@ -90,7 +93,8 @@ export default {
     },
     components: {
         SecaoHeader,
-        SecaoPrincipal
+        SecaoPrincipal,
+        SecaoCriptomoedas
     }
 }
 </script>
