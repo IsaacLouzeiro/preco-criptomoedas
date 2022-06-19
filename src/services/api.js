@@ -4,7 +4,7 @@ import { get } from 'axios';
 let response = null;
 new Promise((resolve, reject) => {
   try {
-    response = get('http://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
+    response = get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
     // response = get('http://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
       headers: {
         'X-CMC_PRO_API_KEY': '16514700-50e6-4f13-8564-8705d12cc15b',
