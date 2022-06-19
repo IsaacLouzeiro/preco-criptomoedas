@@ -3,7 +3,8 @@
         <hr class="mt-4">
         <h2 class="text-center fw-bold mt-4 mb-4">Procure sua criptomoeda preferida</h2>
 
-        <ul id="lista" class="nav position-relative d-flex justify-content-center mx-auto px-2">
+        <!-- menu de pesquisa -->
+        <ul id="menuLista" class="nav position-relative d-flex justify-content-start justify-content-sm-around mx-auto">
             <!-- botao de pesquisa -->
             <li :class="inputLiberado">
                 <button type="button" class="btnPesquisa mx-2 btn" @click="inputLiberado = 'inputLiberado'"><i class="fas fa-search"></i></button>
@@ -12,8 +13,8 @@
             </li>
 
             <li>
-                <button type="button" class="btn mx-2">
-                    Pricipais Criptomoedas
+                <button type="button" class="btn mx-2 d-block">
+                    Pricipais&nbsp;Criptomoedas
                 </button>
             </li>
 
@@ -29,6 +30,29 @@
                 </button>
             </li>
         </ul>
+
+        <!-- lista de criptomoedas -->
+        <ul id="lista">
+            <table class="table mx-auto">
+                <thead>
+                    <tr>
+                    <th scope="col">Cripto</th>
+                    <th scope="col" class="text-center">Sigla</th>
+                    <th scope="col" class="text-center">Valor</th>
+                    <th scope="col" class="text-center">24H</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in criptoCurrency" :key="item.id">
+                        <th scope="row">{{ item.name }}</th>
+                        <td>{{ item.code }}</td>
+                        <td>{{ item.price }}</td>
+                        <td>{{ item.day }}</td>
+                        <td><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </ul>
     </section>
 </template>
 
@@ -40,6 +64,10 @@ export default {
         return {
             inputLiberado: '',
         }
+    },
+
+    props: {
+        criptoCurrency: Array
     }
 }
 </script>
@@ -47,8 +75,12 @@ export default {
 <style lang="scss" scoped>
     @import '../assets/sass/cores.scss';
 
-    #lista {
-        max-width: 700px;
+    #menuLista {
+        max-width: 767px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        height: 60px;
+        flex-wrap: nowrap;
 
         .btn {
             border-top: none;
@@ -94,6 +126,21 @@ export default {
                     cursor: pointer;
                     display: block;
                 }
+            }
+        }
+    }
+
+    #lista {
+        table.table {
+            max-width: 767px;
+
+            thead {
+                border: rgba(0,0,0,0);
+            }
+
+            td {
+                padding: 15px 0;
+                text-align: center;
             }
         }
     }

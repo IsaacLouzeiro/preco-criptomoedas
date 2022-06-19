@@ -35,7 +35,7 @@
     
     <SecaoPrincipal class="container" :criptoCurrency="criptoCurrency" />
     
-    <SecaoCriptomoedas class="container pb-3" />
+    <SecaoCriptomoedas class="container pb-3" :criptoCurrency="criptoCurrency" />
 </template>
 
 <script>
