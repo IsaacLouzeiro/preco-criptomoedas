@@ -76,7 +76,7 @@ export default {
         }
     },
     mounted() {
-        api.get('')
+        api.get('/cryptocurrency/*')
     },
 
     // ler a rolagem da pagina
