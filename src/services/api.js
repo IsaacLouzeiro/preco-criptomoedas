@@ -24,3 +24,5 @@ new Promise((resolve, reject) => {
     resolve(json);
   }
 });
+
+export default response;
