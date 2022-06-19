@@ -42,6 +42,7 @@
 import SecaoPrincipal from './components/SecaoPrincipal.vue'
 import SecaoHeader from './components/SecaoHeader.vue'
 import SecaoCriptomoedas from './components/SecaoCriptomoedas.vue'
+import api from './services/api.js'
 
 export default {
     name: 'App',
@@ -74,6 +75,10 @@ export default {
             ],
         }
     },
+    mounted() {
+        api.get('')
+    },
+
     // ler a rolagem da pagina
     created() {
         window.addEventListener("scroll", this.stickyTop);
