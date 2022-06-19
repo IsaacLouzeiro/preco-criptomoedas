@@ -88,6 +88,7 @@ export default {
             .btn {
                 border: none;
                 opacity: .7;
+                background-color: $color2;
                 cursor: default;
                 &.btnFechar {
                     cursor: pointer;
