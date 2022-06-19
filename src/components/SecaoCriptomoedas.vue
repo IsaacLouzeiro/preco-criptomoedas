@@ -88,6 +88,10 @@ export default {
 <style lang="scss" scoped>
     @import '../assets/sass/cores.scss';
 
+    #secaoCriptomoedas {
+        background-color: rgba($color2, .9);
+    }
+
     #menuLista {
         max-width: 767px;
         overflow-x: auto;
