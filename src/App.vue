@@ -43,8 +43,6 @@ import SecaoPrincipal from './components/SecaoPrincipal.vue'
 import SecaoHeader from './components/SecaoHeader.vue'
 import SecaoCriptomoedas from './components/SecaoCriptomoedas.vue'
 
-import api from '@/services/api.js'
-
 export default {
     name: 'App',
     data() {
@@ -56,7 +54,7 @@ export default {
                 {
                     id: 1,
                     name: 'Bitcoin',
-                    symbol: 'BTC',
+                    code: 'BTC',
                     price: '17,968.59',
                     day: '-12.69%',
                     week: '-37.13%',
@@ -66,7 +64,7 @@ export default {
                 {
                     id: 2,
                     name: 'Ethereum',
-                    symbol: 'ETH',
+                    code: 'ETH',
                     price: '910.99',
                     day: '-16.18%',
                     week: '-41.04%',
@@ -76,13 +74,6 @@ export default {
             ],
         }
     },
-
-    mounted() {
-        api.get('').then(response => {
-            console.log(response.data);
-        })
-    },
-
     // ler a rolagem da pagina
     created() {
         window.addEventListener("scroll", this.stickyTop);
