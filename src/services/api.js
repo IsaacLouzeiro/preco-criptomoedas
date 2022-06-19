@@ -25,4 +25,4 @@ new Promise((resolve, reject) => {
   }
 });
 
-export default response;
+export default get;
