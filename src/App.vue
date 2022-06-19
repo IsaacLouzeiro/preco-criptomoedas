@@ -81,7 +81,7 @@ export default {
     },
 
     mounted() {
-        api.get('v1/cryptocurrency/listings/latest').then(response => {
+        api.get('').then(response => {
             console.log(response.data)
         })
     },
