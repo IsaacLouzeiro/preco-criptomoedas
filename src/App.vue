@@ -31,14 +31,10 @@
         </div>
     </nav>
 
-
     <SecaoHeader />
     
     <SecaoPrincipal class="container" :criptoCurrency="criptoCurrency" />
     
-    <div>aaa
-        <span>{{ criptos }}</span>
-    </div>
     <SecaoCriptomoedas class="container pb-3" :criptoCurrency="criptoCurrency" />
 </template>
 
@@ -46,7 +42,6 @@
 import SecaoPrincipal from './components/SecaoPrincipal.vue'
 import SecaoHeader from './components/SecaoHeader.vue'
 import SecaoCriptomoedas from './components/SecaoCriptomoedas.vue'
-import api from './api.js';
 
 export default {
     name: 'App',
@@ -77,22 +72,12 @@ export default {
                     volume: '16,827,166,935'
                 }
             ],
-
-            criptos: []
         }
     },
-
-    mounted() {
-        api.get('').then(response => {
-            this.criptos = response.data
-        })
-    },
-
     // ler a rolagem da pagina
     created() {
         window.addEventListener("scroll", this.stickyTop);
     },
-
     unmounted() {
         window.removeEventListener("scroll", this.stickyTop);
     },
