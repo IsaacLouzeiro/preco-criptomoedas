@@ -32,27 +32,40 @@
         </ul>
 
         <!-- lista de criptomoedas -->
-        <ul id="lista">
-            <table class="table mx-auto">
-                <thead>
-                    <tr>
-                    <th scope="col">Cripto</th>
-                    <th scope="col" class="text-center">Sigla</th>
-                    <th scope="col" class="text-center">Valor</th>
-                    <th scope="col" class="text-center">24H</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="item in criptoCurrency" :key="item.id">
-                        <th scope="row">{{ item.name }}</th>
-                        <td>{{ item.code }}</td>
-                        <td>{{ item.price }}</td>
-                        <td>{{ item.day }}</td>
-                        <td><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </ul>
+        <table class="table mx-auto" id="lista">
+            <thead>
+                <tr>
+                <th scope="col" class="d-md-table-cell d-none">Cripto</th>
+                <th scope="col" class="text-center  d-md-table-cell d-none">Sigla</th>
+                <th scope="col" class="text-end text-md-center d-md-table-cell d-none">Valor</th>
+                <th scope="col" class="text-center d-md-table-cell d-none">24H</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in criptoCurrency" :key="item.id">
+                    <th scope="row" class="py-3">
+                        {{ item.name }}<br>
+                        <span class="d-block d-md-none mt-1">
+                            {{ item.code }}
+                        </span>
+                    </th>
+
+                    <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
+
+                    <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
+                    
+                    <td class="py-3 text-end text-md-center">
+                        {{ item.day }}<br>
+                        <span class="d-block d-md-none mt-1 fw-bold">
+                            R$
+                            {{ item.price }}
+                        </span>
+                    </td>
+
+                    <td class="d-md-table-cell d-none py-2 text-end pe-0"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
+                </tr>
+            </tbody>
+        </table>
     </section>
 </template>
 
@@ -96,6 +109,10 @@ export default {
                 
                 i { font-size: 1.2em; }
             }
+
+            @media only screen and (max-width: 768px) {
+                font-size: large;
+            }
         }
 
         .inputPesquisar {
@@ -131,16 +148,27 @@ export default {
     }
 
     #lista {
-        table.table {
-            max-width: 767px;
+        max-width: 700px;
 
-            thead {
-                border: rgba(0,0,0,0);
+        thead {
+            border: rgba(0,0,0,0);
+        }
+        
+        td {
+            text-align: center;
+        }
+
+        tbody {
+            th { font-weight: 500; }
+        }
+
+        @media only screen and (max-width: 768px) {
+            th, td {
+                font-size: large;
             }
 
-            td {
-                padding: 15px 0;
-                text-align: center;
+            tbody {
+                th { font-weight: 400; }
             }
         }
     }
