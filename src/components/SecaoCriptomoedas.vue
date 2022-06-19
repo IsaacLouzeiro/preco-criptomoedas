@@ -72,6 +72,7 @@ export default {
         }
 
         .inputLiberado {
+            background-color: $color2;
             display: flex;
             width: 100%;
             position: absolute;
@@ -88,7 +89,6 @@ export default {
             .btn {
                 border: none;
                 opacity: .7;
-                background-color: $color2;
                 cursor: default;
                 &.btnFechar {
                     cursor: pointer;
