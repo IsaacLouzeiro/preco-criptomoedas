@@ -42,7 +42,7 @@
 import SecaoPrincipal from './components/SecaoPrincipal.vue'
 import SecaoHeader from './components/SecaoHeader.vue'
 import SecaoCriptomoedas from './components/SecaoCriptomoedas.vue'
-import api from './services/api.js';
+import api from './api.js';
 
 export default {
     name: 'App',
