@@ -7,25 +7,25 @@
         <ul id="menuLista" class="nav position-relative d-flex justify-content-start justify-content-sm-around mx-auto">
             <!-- botao de pesquisa -->
             <li :class="inputLiberado">
-                <button type="button" class="btnPesquisa mx-2 btn" @click="inputLiberado = 'inputLiberado'"><i class="fas fa-search"></i></button>
+                <button type="button" class="btnPesquisa mx-2 btn" @click="pesquisarCripto(), inputLiberado = 'inputLiberado'"><i class="fas fa-search"></i></button>
                 <input type="text" class="form-control inputPesquisar w-100 py-2">
-                <button type="button" class="btnFechar btn" @click="inputLiberado = ''"><i class="fas fa-times"></i></button>
+                <button type="button" class="btnFechar btn" @click="principaisCriptomoedas(), inputLiberado = ''"><i class="fas fa-times"></i></button>
             </li>
 
             <li>
-                <button type="button" class="btn mx-2 d-block">
+                <button type="button" class="btn mx-2 d-block" @click="principaisCriptomoedas()">
                     Pricipais&nbsp;Criptomoedas
                 </button>
             </li>
 
             <li>
-                <button type="button" class="btn mx-2">
+                <button type="button" class="btn mx-2" @click="tokens()">
                 Tokens
                 </button>
             </li>
 
             <li>
-                <button type="button" class="btn mx-2">
+                <button type="button" class="btn mx-2" @click="deFi()">
                 DeFi
                 </button>
             </li>
@@ -42,8 +42,81 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="item in criptoCurrency" :key="item.id">
-                    <th scope="row" class="py-3">
+                <!-- principais criptomoedas -->
+                <tr v-for="item in criptoCurrency" :key="item.id" v-show="pesqCripto == true">
+                    <th scope="row" class="py-3">pesq
+                        {{ item.name }}<br>
+                        <span class="d-block d-md-none mt-1">
+                            {{ item.code }}
+                        </span>
+                    </th>
+
+                    <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
+
+                    <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
+                    
+                    <td class="py-3 text-end text-md-center">
+                        {{ item.day }}<br>
+                        <span class="d-block d-md-none mt-1 fw-bold">
+                            R$
+                            {{ item.price }}
+                        </span>
+                    </td>
+
+                    <td class="d-md-table-cell d-none py-2 text-end pe-0"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
+                </tr>
+
+                <!-- principais criptomoedas -->
+                <tr v-for="item in criptoCurrency" :key="item.id" v-show="princCriptos == true">
+                    <th scope="row" class="py-3">v
+                        {{ item.name }}<br>
+                        <span class="d-block d-md-none mt-1">
+                            {{ item.code }}
+                        </span>
+                    </th>
+
+                    <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
+
+                    <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
+                    
+                    <td class="py-3 text-end text-md-center">
+                        {{ item.day }}<br>
+                        <span class="d-block d-md-none mt-1 fw-bold">
+                            R$
+                            {{ item.price }}
+                        </span>
+                    </td>
+
+                    <td class="d-md-table-cell d-none py-2 text-end pe-0"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
+                </tr>
+
+                <!-- Tokens -->
+                <tr v-for="item in criptoCurrency" :key="item.id" v-show="token == true">
+                    <th scope="row" class="py-3">a
+                        {{ item.name }}<br>
+                        <span class="d-block d-md-none mt-1">
+                            {{ item.code }}
+                        </span>
+                    </th>
+
+                    <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
+
+                    <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
+                    
+                    <td class="py-3 text-end text-md-center">
+                        {{ item.day }}<br>
+                        <span class="d-block d-md-none mt-1 fw-bold">
+                            R$
+                            {{ item.price }}
+                        </span>
+                    </td>
+
+                    <td class="d-md-table-cell d-none py-2 text-end pe-0"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
+                </tr>
+
+                <!-- DeFi -->
+                <tr v-for="item in criptoCurrency" :key="item.id" v-show="deFiS == true">
+                    <th scope="row" class="py-3">b
                         {{ item.name }}<br>
                         <span class="d-block d-md-none mt-1">
                             {{ item.code }}
@@ -76,11 +149,42 @@ export default {
     data() {
         return {
             inputLiberado: '',
+            pesqCripto: false,
+            princCriptos: true,
+            token: false,
+            deFiS: false
         }
     },
 
     props: {
         criptoCurrency: Array
+    },
+
+    methods: {
+        pesquisarCripto() {
+            this.pesqCripto = true
+            this.princCriptos = false
+            this.token = false
+            this.deFiS = false
+        },
+        principaisCriptomoedas() {
+            this.princCriptos = true
+            this.pesqCripto = false
+            this.token = false
+            this.deFiS = false
+        },
+        tokens() {
+            this.token = true
+            this.pesqCripto = false
+            this.princCriptos = false
+            this.deFiS = false
+        },
+        deFi() {
+            this.deFiS = true
+            this.pesqCripto = false
+            this.princCriptos = false
+            this.token = false
+        }
     }
 }
 </script>
