@@ -31,10 +31,14 @@
         </div>
     </nav>
 
+
     <SecaoHeader />
     
     <SecaoPrincipal class="container" :criptoCurrency="criptoCurrency" />
     
+    <div>aaa
+        <span>{{ criptos }}</span>
+    </div>
     <SecaoCriptomoedas class="container pb-3" :criptoCurrency="criptoCurrency" />
 </template>
 
@@ -73,17 +77,20 @@ export default {
                     volume: '16,827,166,935'
                 }
             ],
+
+            criptos: []
         }
-    },
-    // ler a rolagem da pagina
-    created() {
-        window.addEventListener("scroll", this.stickyTop);
     },
 
     mounted() {
         api.get('').then(response => {
-            console.log(response.data)
+            this.criptos = response.data
         })
+    },
+
+    // ler a rolagem da pagina
+    created() {
+        window.addEventListener("scroll", this.stickyTop);
     },
 
     unmounted() {
