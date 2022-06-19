@@ -42,6 +42,7 @@
 import SecaoPrincipal from './components/SecaoPrincipal.vue'
 import SecaoHeader from './components/SecaoHeader.vue'
 import SecaoCriptomoedas from './components/SecaoCriptomoedas.vue'
+import api from './services/api.js';
 
 export default {
     name: 'App',
@@ -77,6 +78,12 @@ export default {
     // ler a rolagem da pagina
     created() {
         window.addEventListener("scroll", this.stickyTop);
+    },
+
+    mounted() {
+        api.get('v1/cryptocurrency/listings/latest').then(response => {
+            console.log(response.data)
+        })
     },
 
     unmounted() {
