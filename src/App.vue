@@ -75,14 +75,17 @@ export default {
             ],
         }
     },
-    mounted() {
-        api.get('/cryptocurrency/*')
-    },
-
     // ler a rolagem da pagina
     created() {
         window.addEventListener("scroll", this.stickyTop);
     },
+
+    mounted() {
+        api.get('').then(response => {
+            console.log(response.data);
+        });
+    },
+
     unmounted() {
         window.removeEventListener("scroll", this.stickyTop);
     },
