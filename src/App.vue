@@ -54,7 +54,7 @@ export default {
                 {
                     id: 1,
                     name: 'Bitcoin',
-                    code: 'BTC',
+                    symbol: 'BTC',
                     price: '17,968.59',
                     day: '-12.69%',
                     week: '-37.13%',
@@ -64,7 +64,7 @@ export default {
                 {
                     id: 2,
                     name: 'Ethereum',
-                    code: 'ETH',
+                    symbol: 'ETH',
                     price: '910.99',
                     day: '-16.18%',
                     week: '-41.04%',

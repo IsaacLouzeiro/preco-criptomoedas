@@ -7,25 +7,25 @@
         <ul id="menuLista" class="nav position-relative d-flex justify-content-start justify-content-sm-around mx-auto">
             <!-- botao de pesquisa -->
             <li :class="inputLiberado">
-                <button type="button" class="btnPesquisa mx-2 btn" @click="pesquisarCripto(), inputLiberado = 'inputLiberado'"><i class="fas fa-search"></i></button>
+                <button type="button" class="btnPesquisa mx-2 btn" :class="{ selecionado: pesqCripto }" @click="pesquisarCripto(), inputLiberado = 'inputLiberado'"><i class="fas fa-search"></i></button>
                 <input type="text" class="form-control inputPesquisar w-100 py-2">
                 <button type="button" class="btnFechar btn" @click="principaisCriptomoedas(), inputLiberado = ''"><i class="fas fa-times"></i></button>
             </li>
 
             <li>
-                <button type="button" class="btn mx-2 d-block" @click="principaisCriptomoedas()">
+                <button type="button" class="btn mx-2 d-block" :class="{ selecionado: princCriptos }" @click="principaisCriptomoedas()">
                     Pricipais&nbsp;Criptomoedas
                 </button>
             </li>
 
             <li>
-                <button type="button" class="btn mx-2" @click="tokens()">
+                <button type="button" class="btn mx-2" :class="{ selecionado: token }" @click="tokens()">
                 Tokens
                 </button>
             </li>
 
             <li>
-                <button type="button" class="btn mx-2" @click="deFi()">
+                <button type="button" class="btn mx-2" :class="{ selecionado: deFiS }" @click="deFi()">
                 DeFi
                 </button>
             </li>
@@ -44,7 +44,7 @@
             <tbody>
                 <!-- principais criptomoedas -->
                 <tr v-for="item in criptoCurrency" :key="item.id" v-show="pesqCripto == true">
-                    <th scope="row" class="py-3">pesq
+                    <th scope="row" class="py-3">Pesquisa
                         {{ item.name }}<br>
                         <span class="d-block d-md-none mt-1">
                             {{ item.code }}
@@ -68,7 +68,7 @@
 
                 <!-- principais criptomoedas -->
                 <tr v-for="item in criptoCurrency" :key="item.id" v-show="princCriptos == true">
-                    <th scope="row" class="py-3">v
+                    <th scope="row" class="py-3">Princ cript
                         {{ item.name }}<br>
                         <span class="d-block d-md-none mt-1">
                             {{ item.code }}
@@ -92,7 +92,7 @@
 
                 <!-- Tokens -->
                 <tr v-for="item in criptoCurrency" :key="item.id" v-show="token == true">
-                    <th scope="row" class="py-3">a
+                    <th scope="row" class="py-3">Tokens
                         {{ item.name }}<br>
                         <span class="d-block d-md-none mt-1">
                             {{ item.code }}
@@ -116,7 +116,7 @@
 
                 <!-- DeFi -->
                 <tr v-for="item in criptoCurrency" :key="item.id" v-show="deFiS == true">
-                    <th scope="row" class="py-3">b
+                    <th scope="row" class="py-3">DeFi
                         {{ item.name }}<br>
                         <span class="d-block d-md-none mt-1">
                             {{ item.code }}
@@ -209,6 +209,11 @@ export default {
             border-right: none;
             border-bottom: 2px solid $color3;
             border-radius: 0;
+
+            // se o item for selecionado
+            &.selecionado {
+                border-color: $color1;
+            }
             
             &:focus, &:hover { opacity: .7; }
 
