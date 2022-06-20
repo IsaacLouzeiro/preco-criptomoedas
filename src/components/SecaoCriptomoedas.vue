@@ -1,144 +1,146 @@
 <template>
     <section id="secaoCriptomoedas" class="pt-3 pb-4 mt-0">
-        <hr class="pb-4 m-0">
-        <h2 class="text-center fw-bold mt-4 mb-4">Procure sua criptomoeda preferida</h2>
+        <div class="container pb-3">
+            <hr class="pb-4 m-0">
+            <h2 class="text-center fw-bold mt-4 mb-4">Procure sua criptomoeda preferida</h2>
 
-        <!-- menu de pesquisa -->
-        <ul id="menuLista" class="nav position-relative d-flex justify-content-start justify-content-sm-around mx-auto">
-            <!-- botao de pesquisa -->
-            <li :class="inputLiberado">
-                <button type="button" class="btnPesquisa mx-2 btn" :class="{ selecionado: pesqCripto }" @click="pesquisarCripto(), inputLiberado = 'inputLiberado'"><i class="fas fa-search"></i></button>
-                <input type="text" class="form-control inputPesquisar w-100 py-2">
-                <button type="button" class="btnFechar btn" @click="principaisCriptomoedas(), inputLiberado = ''"><i class="fas fa-times"></i></button>
-            </li>
+            <!-- menu de pesquisa -->
+            <ul id="menuLista" class="nav position-relative d-flex justify-content-start justify-content-sm-around mx-auto">
+                <!-- botao de pesquisa -->
+                <li :class="inputLiberado">
+                    <button type="button" class="btnPesquisa mx-2 btn" :class="{ selecionado: pesqCripto }" @click="pesquisarCripto(), inputLiberado = 'inputLiberado'"><i class="fas fa-search"></i></button>
+                    <input type="text" class="form-control inputPesquisar w-100 py-2">
+                    <button type="button" class="btnFechar btn" @click="principaisCriptomoedas(), inputLiberado = ''"><i class="fas fa-times"></i></button>
+                </li>
 
-            <li>
-                <button type="button" class="btn mx-2 d-block" :class="{ selecionado: princCriptos }" @click="principaisCriptomoedas()">
-                    Pricipais&nbsp;Criptomoedas
-                </button>
-            </li>
+                <li>
+                    <button type="button" class="btn mx-2 d-block" :class="{ selecionado: princCriptos }" @click="principaisCriptomoedas()">
+                        Pricipais&nbsp;Criptomoedas
+                    </button>
+                </li>
 
-            <li>
-                <button type="button" class="btn mx-2" :class="{ selecionado: token }" @click="tokens()">
-                Tokens
-                </button>
-            </li>
+                <li>
+                    <button type="button" class="btn mx-2" :class="{ selecionado: token }" @click="tokens()">
+                    Tokens
+                    </button>
+                </li>
 
-            <li>
-                <button type="button" class="btn mx-2" :class="{ selecionado: deFiS }" @click="deFi()">
-                DeFi
-                </button>
-            </li>
-        </ul>
+                <li>
+                    <button type="button" class="btn mx-2" :class="{ selecionado: deFiS }" @click="deFi()">
+                    DeFi
+                    </button>
+                </li>
+            </ul>
 
-        <!-- lista de criptomoedas -->
-        <table class="table mx-auto" id="lista">
-            <thead>
-                <tr>
-                <th scope="col" class="d-md-table-cell d-none">Cripto</th>
-                <th scope="col" class="text-center  d-md-table-cell d-none">Sigla</th>
-                <th scope="col" class="text-end text-md-center d-md-table-cell d-none">Valor</th>
-                <th scope="col" class="text-center d-md-table-cell d-none">24H</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- principais criptomoedas -->
-                <tr v-for="item in criptoCurrency" :key="item.id" v-show="pesqCripto == true">
-                    <th scope="row" class="py-3">Pesquisa
-                        {{ item.name }}<br>
-                        <span class="d-block d-md-none mt-1">
-                            {{ item.code }}
-                        </span>
-                    </th>
+            <!-- lista de criptomoedas -->
+            <table class="table mx-auto" id="lista">
+                <thead>
+                    <tr>
+                    <th scope="col" class="d-md-table-cell d-none">Cripto</th>
+                    <th scope="col" class="text-center  d-md-table-cell d-none">Sigla</th>
+                    <th scope="col" class="text-end text-md-center d-md-table-cell d-none">Valor</th>
+                    <th scope="col" class="text-center d-md-table-cell d-none">24H</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- principais criptomoedas -->
+                    <tr v-for="item in criptoCurrency" :key="item.id" v-show="pesqCripto == true">
+                        <th scope="row" class="py-3">Pesquisa
+                            {{ item.name }}<br>
+                            <span class="d-block d-md-none mt-1">
+                                {{ item.code }}
+                            </span>
+                        </th>
 
-                    <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
+                        <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
 
-                    <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
-                    
-                    <td class="py-3 text-end text-md-center">
-                        {{ item.day }}<br>
-                        <span class="d-block d-md-none mt-1 fw-bold">
-                            R$
-                            {{ item.price }}
-                        </span>
-                    </td>
+                        <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
+                        
+                        <td class="py-3 text-end text-md-center">
+                            {{ item.day }}<br>
+                            <span class="d-block d-md-none mt-1 fw-bold">
+                                R$
+                                {{ item.price }}
+                            </span>
+                        </td>
 
-                    <td class="d-md-table-cell d-none py-2 text-end"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
-                </tr>
+                        <td class="d-md-table-cell d-none py-2 text-end"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
+                    </tr>
 
-                <!-- principais criptomoedas -->
-                <tr v-for="item in criptoCurrency" :key="item.id" v-show="princCriptos == true">
-                    <th scope="row" class="py-3">Princ cript
-                        {{ item.name }}<br>
-                        <span class="d-block d-md-none mt-1">
-                            {{ item.code }}
-                        </span>
-                    </th>
+                    <!-- principais criptomoedas -->
+                    <tr v-for="item in criptoCurrency" :key="item.id" v-show="princCriptos == true">
+                        <th scope="row" class="py-3">Princ cript
+                            {{ item.name }}<br>
+                            <span class="d-block d-md-none mt-1">
+                                {{ item.code }}
+                            </span>
+                        </th>
 
-                    <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
+                        <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
 
-                    <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
-                    
-                    <td class="py-3 text-end text-md-center">
-                        {{ item.day }}<br>
-                        <span class="d-block d-md-none mt-1 fw-bold">
-                            R$
-                            {{ item.price }}
-                        </span>
-                    </td>
+                        <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
+                        
+                        <td class="py-3 text-end text-md-center">
+                            {{ item.day }}<br>
+                            <span class="d-block d-md-none mt-1 fw-bold">
+                                R$
+                                {{ item.price }}
+                            </span>
+                        </td>
 
-                    <td class="d-md-table-cell d-none py-2 text-end"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
-                </tr>
+                        <td class="d-md-table-cell d-none py-2 text-end"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
+                    </tr>
 
-                <!-- Tokens -->
-                <tr v-for="item in criptoCurrency" :key="item.id" v-show="token == true">
-                    <th scope="row" class="py-3">Tokens
-                        {{ item.name }}<br>
-                        <span class="d-block d-md-none mt-1">
-                            {{ item.code }}
-                        </span>
-                    </th>
+                    <!-- Tokens -->
+                    <tr v-for="item in criptoCurrency" :key="item.id" v-show="token == true">
+                        <th scope="row" class="py-3">Tokens
+                            {{ item.name }}<br>
+                            <span class="d-block d-md-none mt-1">
+                                {{ item.code }}
+                            </span>
+                        </th>
 
-                    <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
+                        <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
 
-                    <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
-                    
-                    <td class="py-3 text-end text-md-center">
-                        {{ item.day }}<br>
-                        <span class="d-block d-md-none mt-1 fw-bold">
-                            R$
-                            {{ item.price }}
-                        </span>
-                    </td>
+                        <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
+                        
+                        <td class="py-3 text-end text-md-center">
+                            {{ item.day }}<br>
+                            <span class="d-block d-md-none mt-1 fw-bold">
+                                R$
+                                {{ item.price }}
+                            </span>
+                        </td>
 
-                    <td class="d-md-table-cell d-none py-2 text-end"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
-                </tr>
+                        <td class="d-md-table-cell d-none py-2 text-end"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
+                    </tr>
 
-                <!-- DeFi -->
-                <tr v-for="item in criptoCurrency" :key="item.id" v-show="deFiS == true">
-                    <th scope="row" class="py-3">DeFi
-                        {{ item.name }}<br>
-                        <span class="d-block d-md-none mt-1">
-                            {{ item.code }}
-                        </span>
-                    </th>
+                    <!-- DeFi -->
+                    <tr v-for="item in criptoCurrency" :key="item.id" v-show="deFiS == true">
+                        <th scope="row" class="py-3">DeFi
+                            {{ item.name }}<br>
+                            <span class="d-block d-md-none mt-1">
+                                {{ item.code }}
+                            </span>
+                        </th>
 
-                    <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
+                        <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
 
-                    <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
-                    
-                    <td class="py-3 text-end text-md-center">
-                        {{ item.day }}<br>
-                        <span class="d-block d-md-none mt-1 fw-bold">
-                            R$
-                            {{ item.price }}
-                        </span>
-                    </td>
+                        <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
+                        
+                        <td class="py-3 text-end text-md-center">
+                            {{ item.day }}<br>
+                            <span class="d-block d-md-none mt-1 fw-bold">
+                                R$
+                                {{ item.price }}
+                            </span>
+                        </td>
 
-                    <td class="d-md-table-cell d-none py-2 text-end"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
-                </tr>
-            </tbody>
-        </table>
+                        <td class="d-md-table-cell d-none py-2 text-end"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 </template>
 

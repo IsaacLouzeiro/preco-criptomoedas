@@ -33,9 +33,9 @@
 
     <SecaoHeader />
     
-    <SecaoPrincipal class="container" :criptoCurrency="criptoCurrency" />
+    <SecaoPrincipal :criptoCurrency="criptoCurrency" />
     
-    <SecaoCriptomoedas class="container pb-3" :criptoCurrency="criptoCurrency" />
+    <SecaoCriptomoedas :criptoCurrency="criptoCurrency" />
     
     <SecaoEstatisticas />
 

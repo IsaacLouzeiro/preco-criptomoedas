@@ -44,6 +44,11 @@ export default {
 <style lang="scss" scoped>
     @import '../assets/sass/cores.scss';
 
+    header {
+        color: $color1;
+        background-color: rgba($color2, .9);
+    }
+
     // cabecalho da parte principal
     #coverBg {
         width: 100%;
