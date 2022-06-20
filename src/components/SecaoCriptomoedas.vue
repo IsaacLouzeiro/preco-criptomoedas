@@ -1,6 +1,6 @@
 <template>
     <section id="secaoCriptomoedas">
-        <hr class="mt-4">
+        <hr class="mt-4 mb-5">
         <h2 class="text-center fw-bold mt-4 mb-4">Procure sua criptomoeda preferida</h2>
 
         <!-- menu de pesquisa -->
@@ -63,7 +63,7 @@
                         </span>
                     </td>
 
-                    <td class="d-md-table-cell d-none py-2 text-end pe-0"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
+                    <td class="d-md-table-cell d-none py-2 text-end"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
                 </tr>
 
                 <!-- principais criptomoedas -->
@@ -87,7 +87,7 @@
                         </span>
                     </td>
 
-                    <td class="d-md-table-cell d-none py-2 text-end pe-0"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
+                    <td class="d-md-table-cell d-none py-2 text-end"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
                 </tr>
 
                 <!-- Tokens -->
@@ -111,7 +111,7 @@
                         </span>
                     </td>
 
-                    <td class="d-md-table-cell d-none py-2 text-end pe-0"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
+                    <td class="d-md-table-cell d-none py-2 text-end"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
                 </tr>
 
                 <!-- DeFi -->
@@ -135,7 +135,7 @@
                         </span>
                     </td>
 
-                    <td class="d-md-table-cell d-none py-2 text-end pe-0"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
+                    <td class="d-md-table-cell d-none py-2 text-end"><a href="#" class="btn btn-outline-success">Veja Mais</a></td>
                 </tr>
             </tbody>
         </table>
@@ -269,10 +269,11 @@ export default {
         
         td {
             text-align: center;
+            background-color: rgba($color3, .04);
         }
 
         tbody {
-            th { font-weight: 500; }
+            th { font-weight: 500; background-color: rgba($color3, .04); }
         }
 
         @media only screen and (max-width: 768px) {
