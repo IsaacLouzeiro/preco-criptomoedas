@@ -1,5 +1,5 @@
 <template>
-    <section id="secaoCriptomoedas" class="pt-3 mt-0">
+    <section id="secaoCriptomoedas" class="pt-3 pb-4 mt-0">
         <hr class="pb-4 m-0">
         <h2 class="text-center fw-bold mt-4 mb-4">Procure sua criptomoeda preferida</h2>
 

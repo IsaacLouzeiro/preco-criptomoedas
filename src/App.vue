@@ -37,9 +37,9 @@
     
     <SecaoCriptomoedas class="container pb-3" :criptoCurrency="criptoCurrency" />
     
-    <SecaoFaq />
-
     <SecaoEstatisticas />
+
+    <SecaoFaq />
 </template>
 
 <script>

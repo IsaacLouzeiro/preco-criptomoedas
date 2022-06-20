@@ -1,7 +1,6 @@
 <template>
-    <section id="secaoFaq" class="py-5 px-2">
-        <hr>
-        <h2 class="text-center fw-bold pt-4 pb-4">FAQ</h2>
+    <section id="secaoFaq" class="pb-5 px-2">
+        <h2 class="text-center fw-bold pt-5 pb-4">FAQ</h2>
         
         <!-- acordeao de perguntas -->
         <div class="accordion accordion-flush mx-auto" id="accordionFlush">
