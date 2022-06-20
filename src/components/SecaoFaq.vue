@@ -72,7 +72,7 @@
 
     #secaoFaq {
         width: 100%;
-        background-color: $color2;
+        background-color: rgba($color2, .9);
 
         .accordion {
             width: 65%;

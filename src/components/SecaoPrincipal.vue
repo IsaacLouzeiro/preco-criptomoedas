@@ -1,5 +1,5 @@
 <template>
-    <section id="secaoPrincipal" class="mt-2 rounded p-0">
+    <section id="secaoPrincipal" class="py-2 rounded p-0">
         <!-- titulo -->
         <h2 class="text-center fw-bold mt-5 mb-4">Principais moedas do mercado</h2>
         <!-- principais moedas do mercado -->
@@ -66,6 +66,7 @@ export default {
 
     #secaoPrincipal {
         color: $color1;
+        background-color: rgba($color2, .9);
     }
 
     .moedasPrincipais {

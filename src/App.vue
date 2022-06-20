@@ -38,6 +38,8 @@
     <SecaoCriptomoedas class="container pb-3" :criptoCurrency="criptoCurrency" />
     
     <SecaoFaq />
+
+    <SecaoEstatisticas />
 </template>
 
 <script>
@@ -45,6 +47,7 @@ import SecaoPrincipal from './components/SecaoPrincipal.vue'
 import SecaoHeader from './components/SecaoHeader.vue'
 import SecaoCriptomoedas from './components/SecaoCriptomoedas.vue'
 import SecaoFaq from './components/SecaoFaq.vue'
+import SecaoEstatisticas from './components/SecaoEstatisticas.vue';
 
 export default {
     name: 'App',
@@ -98,7 +101,8 @@ export default {
         SecaoHeader,
         SecaoPrincipal,
         SecaoCriptomoedas,
-        SecaoFaq
+        SecaoFaq,
+        SecaoEstatisticas
     }
 }
 </script>
