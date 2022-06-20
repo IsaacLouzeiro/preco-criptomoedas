@@ -18,7 +18,7 @@
                     <a class="nav-link" href="#secaoCriptomoedas">Criptomoedas</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Sobre</a>
+                    <a class="nav-link" href="#secaoFaq">Sobre</a>
                     </li>
                 </ul>
                 <!-- redes sociais -->
