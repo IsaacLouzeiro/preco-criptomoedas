@@ -12,7 +12,7 @@
                 <a href="#" class="p-2"><i class="fa-brands fa-google-plus-g me-0"></i></a>
             </div>
 
-            <p>&copy; Todos os direitos reservados | por <a href="https://isaaclouzeiro.dev.br/">Isaac Louzeiro</a></p>
+            <p>&copy; Todos os direitos reservados | por <a href="https://isaaclouzeiro.dev.br/" target="_blank">Isaac Louzeiro</a></p>
         </div>
     </footer>
 </template>
