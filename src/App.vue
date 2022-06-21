@@ -40,6 +40,10 @@
     <SecaoEstatisticas />
 
     <SecaoFaq />
+
+    <SecaoNewsletter />
+
+    <SecaoFooter />
 </template>
 
 <script>
@@ -48,6 +52,8 @@ import SecaoHeader from './components/SecaoHeader.vue'
 import SecaoCriptomoedas from './components/SecaoCriptomoedas.vue'
 import SecaoFaq from './components/SecaoFaq.vue'
 import SecaoEstatisticas from './components/SecaoEstatisticas.vue';
+import SecaoNewsletter from './components/SecaoNewsletter.vue'
+import SecaoFooter from './components/SecaoFooter.vue'
 
 export default {
     name: 'App',
@@ -102,7 +108,9 @@ export default {
         SecaoPrincipal,
         SecaoCriptomoedas,
         SecaoFaq,
-        SecaoEstatisticas
+        SecaoEstatisticas,
+        SecaoNewsletter,
+        SecaoFooter
     }
 }
 </script>

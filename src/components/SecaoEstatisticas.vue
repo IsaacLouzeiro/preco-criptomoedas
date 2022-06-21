@@ -93,6 +93,14 @@ export default {
             font-size: 2.5em;
             color: $color3;
             text-align: center;
+
+            @media only screen and (max-width: 767px) {
+                font-size: 2em;
+            }
+
+            @media only screen and (max-width: 500px) {
+                font-size: 1.8em;
+            }
         }
     }
 </style>
