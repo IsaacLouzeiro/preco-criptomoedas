@@ -36,7 +36,7 @@ export default {
         return {
             valor1Inicial: 0,
             valor1Final: 0,
-            valor1Texto: 'Bilhoes',
+            valor1Texto: 'Bilhões',
             valor2Inicial: 0,
             valor2Final: 0,
             valor2Texto: "Projetos",
