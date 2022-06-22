@@ -1,6 +1,6 @@
 <template>
     <!-- cabecalho da parte principal -->
-    <header style="margin-top: 85px">
+    <header style="margin-top: 85px" id="header">
         <div id="coverBg" class="container px-2 carousel slide rounded text-white" data-bs-ride="true">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#coverBg" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

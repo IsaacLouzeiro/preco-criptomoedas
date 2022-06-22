@@ -1,5 +1,6 @@
 <template>
-    <nav class="navbar navbar-expand-lg w-100 p-3 fixed-top" :class="scrolled" @scroll.passive="stickyTop()">
+<div id="app" :class="{scrolledApp: scrolled }">
+    <nav id="menuNavegacao" class="navbar navbar-expand-lg w-100 p-3 fixed-top" :class="{scrolled: scrolled }" @scroll.passive="stickyTop()">
         <div class="container-fluid">
             <!-- logo -->
             <a href="#" class="navbar-brand brand d-flex align-items-center"><img src="@/assets/img/logo.png" alt="Logo" width="30" class="me-1">Cripto<span>Moeda</span></a>
@@ -12,7 +13,7 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Início</a>
+                    <a class="nav-link" aria-current="page" href="#header">Início</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#secaoCriptomoedas">Criptomoedas</a>
@@ -31,19 +32,23 @@
         </div>
     </nav>
 
-    <SecaoHeader />
+    <!-- bootstrap scrollspy -->
+    <div data-bs-spy="scroll" data-bs-target="#menuNavegacao" data-bs-root-margin="0px" data-bs-smooth-scroll="true" tabindex="0">
+        <SecaoHeader />
+        
+        <SecaoPrincipal :criptoCurrency="criptoCurrency" />
+        
+        <SecaoCriptomoedas :criptoCurrency="criptoCurrency" />
+        
+        <SecaoEstatisticas />
     
-    <SecaoPrincipal :criptoCurrency="criptoCurrency" />
-    
-    <SecaoCriptomoedas :criptoCurrency="criptoCurrency" />
-    
-    <SecaoEstatisticas />
+        <SecaoFaq />
+        
+        <SecaoNewsletter />
 
-    <SecaoFaq />
-
-    <SecaoNewsletter />
-
-    <SecaoFooter />
+        <SecaoFooter />
+    </div>
+</div>
 </template>
 
 <script>
@@ -60,7 +65,7 @@ export default {
     data() {
         return {
             // para animacao de rolagem da pagina
-            scrolled: '',
+            scrolled: false,
             
             criptoCurrency: [
                 {
@@ -97,10 +102,10 @@ export default {
     methods: {
         stickyTop() {
             console.log(window.scrollY)
-            if(window.scrollY >= 30)
-                this.scrolled = 'scrolled'
+            if(window.scrollY >= 40)
+                this.scrolled = true
             else
-                this.scrolled = ''
+                this.scrolled = false
         }
     },
     components: {
@@ -138,6 +143,11 @@ export default {
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
+        transition: margin-top .3s ease-in;
+
+        &.scrolledApp {
+            margin-top: -56px;
+        }
     }
 
     // cabecalho
