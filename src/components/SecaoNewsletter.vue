@@ -6,7 +6,7 @@
             <form class="d-flex align-items-center justify-content-center">
                 <div>
                     <label for="inputEmail" class="form-label  position-absolute">Endereco de email</label>
-                    <input type="email" class="form-control border-dark" id="inputEmail">
+                    <input type="email" class="form-control border-dark" id="inputEmail" placeholder="E-mail">
                 </div>
                 <button type="submit" class="btn btn-primary ms-2" @click.prevent="">Enviar</button>
             </form>
