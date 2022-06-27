@@ -9,7 +9,7 @@
                 <!-- botao de pesquisa -->
                 <li :class="inputLiberado">
                     <button type="button" class="btnPesquisa mx-2 btn" :class="{ selecionado: pesqCripto }" @click="pesquisarCripto(), inputLiberado = 'inputLiberado'"><i class="fas fa-search"></i></button>
-                    <input type="text" class="form-control inputPesquisar w-100 py-2">
+                    <input type="text" class="form-control inputPesquisar w-100 py-2" v-model="criptomoeda">
                     <button type="button" class="btnFechar btn" @click="principaisCriptomoedas(), inputLiberado = ''"><i class="fas fa-times"></i></button>
                 </li>
 
@@ -43,9 +43,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- principais criptomoedas -->
-                    <tr v-for="item in criptoCurrency" :key="item.id" v-show="pesqCripto == true">
-                        <th scope="row" class="py-3">Pesquisa
+                    <!-- pesquisa criptomoedas -->
+                    <tr v-for="(item, index) in criptoCurrencyFiltrada" :key="index" v-show="pesqCripto == true">
+                        <th scope="row" class="py-3">
                             {{ item.name }}<br>
                             <span class="d-block d-md-none mt-1">
                                 {{ item.code }}
@@ -68,8 +68,8 @@
                     </tr>
 
                     <!-- principais criptomoedas -->
-                    <tr v-for="item in criptoCurrency" :key="item.id" v-show="princCriptos == true">
-                        <th scope="row" class="py-3">Princ cript
+                    <tr v-for="(item, index) in criptoCurrency" :key="index" v-show="princCriptos == true">
+                        <th scope="row" class="py-3">
                             {{ item.name }}<br>
                             <span class="d-block d-md-none mt-1">
                                 {{ item.code }}
@@ -92,8 +92,8 @@
                     </tr>
 
                     <!-- Tokens -->
-                    <tr v-for="item in criptoCurrency" :key="item.id" v-show="token == true">
-                        <th scope="row" class="py-3">Tokens
+                    <tr v-for="(item, index) in criptoCurrency" :key="index" v-show="token == true">
+                        <th scope="row" class="py-3">
                             {{ item.name }}<br>
                             <span class="d-block d-md-none mt-1">
                                 {{ item.code }}
@@ -116,8 +116,8 @@
                     </tr>
 
                     <!-- DeFi -->
-                    <tr v-for="item in criptoCurrency" :key="item.id" v-show="deFiS == true">
-                        <th scope="row" class="py-3">DeFi
+                    <tr v-for="(item, index) in criptoCurrency" :key="index" v-show="deFiS == true">
+                        <th scope="row" class="py-3">
                             {{ item.name }}<br>
                             <span class="d-block d-md-none mt-1">
                                 {{ item.code }}
@@ -154,12 +154,49 @@ export default {
             pesqCripto: false,
             princCriptos: true,
             token: false,
-            deFiS: false
+            deFiS: false,
+
+            // pesquisa da criptomoeda
+            criptomoeda: '',
+            criptoCurrencyFiltrada: [],
+
+            // listas das criptomoedas
+            criptoCurrency: [
+                {
+                    id: 1,
+                    name: 'Bitcoin',
+                    code: 'BTC',
+                    price: '17,968.59',
+                    day: '-12.69%',
+                    week: '-37.13%',
+                    marketCap: '342,677,468,113',
+                    volume: '34,154,900,735'
+                },
+                {
+                    id: 2,
+                    name: 'Ethereum',
+                    code: 'ETH',
+                    price: '910.99',
+                    day: '-16.18%',
+                    week: '-41.04%',
+                    marketCap: '110,431,019,114',
+                    volume: '16,827,166,935'
+                }
+            ]
         }
     },
 
-    props: {
-        criptoCurrency: Array
+    // inserindo dados da lista principal na lista de pesquisa
+    mounted() {
+        this.criptoCurrencyFiltrada = this.criptoCurrency
+    },
+
+    // criando um filtro para fazer a pesquisa da criptomoeda
+    watch: {
+        criptomoeda(novo) {
+            this.criptoCurrencyFiltrada = this.criptoCurrency.filter(reg => reg.name.toLowerCase().includes(novo.toLowerCase()))
+            console.log(novo)
+        }
     },
 
     methods: {
