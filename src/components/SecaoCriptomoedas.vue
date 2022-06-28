@@ -141,7 +141,10 @@
                 </tbody>
             </table>
 
-            <a href="#" class="btn btn-info">Veja Mais</a>
+            <div class="text-center">
+                <p class="form-text m-2">Caso não encontre sua Cripto aqui</p>
+                <a href="https://www.coingecko.com/" target="_blank" class="btn btnVejaMais">Veja Mais</a>
+            </div>
         </div>
     </section>
 </template>
@@ -319,6 +322,18 @@ export default {
             tbody {
                 th { font-weight: 400; }
             }
+        }
+    }
+
+    .btn.btnVejaMais {
+        background-color: $color3;
+        color: $color2;
+        font-size: 1.2em;
+
+        &:hover {
+            opacity: .7;
+            border-color: $color3;
+            box-shadow: none;
         }
     }
 </style>
