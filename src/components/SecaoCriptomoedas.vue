@@ -9,7 +9,7 @@
                 <!-- botao de pesquisa -->
                 <li :class="inputLiberado">
                     <button type="button" class="btnPesquisa mx-2 btn" :class="{ selecionado: pesqCripto }" @click="pesquisarCripto(), inputLiberado = 'inputLiberado'"><i class="fas fa-search"></i></button>
-                    <input type="text" class="form-control inputPesquisar w-100 py-2" v-model="criptomoeda">
+                    <input type="text" class="form-control inputPesquisar w-100 py-2" v-model="inputCriptomoeda">
                     <button type="button" class="btnFechar btn" @click="principaisCriptomoedas(), inputLiberado = ''"><i class="fas fa-times"></i></button>
                 </li>
 
@@ -44,23 +44,23 @@
                 </thead>
                 <tbody>
                     <!-- pesquisa criptomoedas -->
-                    <tr v-for="(item, index) in criptoCurrencyFiltrada" :key="index" v-show="pesqCripto == true">
+                    <tr v-for="(item, index) in criptomoedaFiltrada" :key="index" v-show="pesqCripto == true" class="pesquisaCriptomoedas">
                         <th scope="row" class="py-3">
                             {{ item.name }}<br>
-                            <span class="d-block d-md-none mt-1">
-                                {{ item.code }}
+                            <span class="d-block d-md-none mt-1  text-uppercase">
+                                {{ item.symbol }}
                             </span>
                         </th>
 
-                        <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
+                        <td class="py-3 d-md-table-cell d-none text-uppercase">{{ item.symbol }}</td>
 
-                        <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
+                        <td class="py-3 d-md-table-cell d-none text-start"><strong>R$</strong> {{ item.current_price }}</td>
                         
                         <td class="py-3 text-end text-md-center">
-                            {{ item.day }}<br>
+                            {{ item.price_change_24h }}<br>
                             <span class="d-block d-md-none mt-1 fw-bold">
                                 R$
-                                {{ item.price }}
+                                {{ item.current_price }}
                             </span>
                         </td>
 
@@ -68,23 +68,23 @@
                     </tr>
 
                     <!-- principais criptomoedas -->
-                    <tr v-for="(item, index) in criptoCurrency" :key="index" v-show="princCriptos == true">
+                    <tr v-for="(item, index) in listaCriptomoedas" :key="index" v-show="princCriptos == true">
                         <th scope="row" class="py-3">
                             {{ item.name }}<br>
-                            <span class="d-block d-md-none mt-1">
-                                {{ item.code }}
+                            <span class="d-block d-md-none mt-1  text-uppercase">
+                                {{ item.symbol }}
                             </span>
                         </th>
 
-                        <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
+                        <td class="py-3 d-md-table-cell d-none  text-uppercase">{{ item.symbol }}</td>
 
-                        <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
+                        <td class="py-3 d-md-table-cell d-none text-start"><strong>R$</strong> {{ item.current_price }}</td>
                         
                         <td class="py-3 text-end text-md-center">
-                            {{ item.day }}<br>
+                            {{ item.price_change_24h }}<br>
                             <span class="d-block d-md-none mt-1 fw-bold">
                                 R$
-                                {{ item.price }}
+                                {{ item.current_price }}
                             </span>
                         </td>
 
@@ -92,23 +92,23 @@
                     </tr>
 
                     <!-- Tokens -->
-                    <tr v-for="(item, index) in criptoCurrency" :key="index" v-show="token == true">
+                    <tr v-for="(item, index) in listaCriptomoedas" :key="index" v-show="token == true">
                         <th scope="row" class="py-3">
                             {{ item.name }}<br>
-                            <span class="d-block d-md-none mt-1">
-                                {{ item.code }}
+                            <span class="d-block d-md-none mt-1 text-uppercase">
+                                {{ item.symbol }}
                             </span>
                         </th>
 
-                        <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
+                        <td class="py-3 d-md-table-cell d-none text-uppercase">{{ item.symbol }}</td>
 
-                        <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
+                        <td class="py-3 d-md-table-cell d-none text-start"><strong>R$</strong> {{ item.current_price }}</td>
                         
                         <td class="py-3 text-end text-md-center">
-                            {{ item.day }}<br>
+                            {{ item.price_change_24h }}<br>
                             <span class="d-block d-md-none mt-1 fw-bold">
                                 R$
-                                {{ item.price }}
+                                {{ item.current_price }}
                             </span>
                         </td>
 
@@ -116,23 +116,23 @@
                     </tr>
 
                     <!-- DeFi -->
-                    <tr v-for="(item, index) in criptoCurrency" :key="index" v-show="deFiS == true">
+                    <tr v-for="(item, index) in listaCriptomoedas" :key="index" v-show="deFiS == true">
                         <th scope="row" class="py-3">
                             {{ item.name }}<br>
-                            <span class="d-block d-md-none mt-1">
-                                {{ item.code }}
+                            <span class="d-block d-md-none mt-1 text-uppercase">
+                                {{ item.symbol }}
                             </span>
                         </th>
 
-                        <td class="py-3 d-md-table-cell d-none">{{ item.code }}</td>
+                        <td class="py-3 d-md-table-cell d-none text-uppercase">{{ item.symbol }}</td>
 
-                        <td class="py-3 d-md-table-cell d-none">{{ item.price }}</td>
+                        <td class="py-3 d-md-table-cell d-none text-start"><strong>R$</strong> {{ item.current_price }}</td>
                         
                         <td class="py-3 text-end text-md-center">
-                            {{ item.day }}<br>
+                            {{ item.price_change_24h }}<br>
                             <span class="d-block d-md-none mt-1 fw-bold">
                                 R$
-                                {{ item.price }}
+                                {{ item.current_price }}
                             </span>
                         </td>
 
@@ -140,11 +140,15 @@
                     </tr>
                 </tbody>
             </table>
+
+            <a href="#" class="btn btn-info">Veja Mais</a>
         </div>
     </section>
 </template>
 
 <script>
+import api from '@/services/api.js';
+
 export default {
     name: 'secaoCriptomoedas',
 
@@ -157,44 +161,36 @@ export default {
             deFiS: false,
 
             // pesquisa da criptomoeda
-            criptomoeda: '',
-            criptoCurrencyFiltrada: [],
+            inputCriptomoeda: '',
+            listaCriptomoedasParaFiltrar: [],
+            criptomoedaFiltrada: [],
 
-            // listas das criptomoedas
-            criptoCurrency: [
-                {
-                    id: 1,
-                    name: 'Bitcoin',
-                    code: 'BTC',
-                    price: '17,968.59',
-                    day: '-12.69%',
-                    week: '-37.13%',
-                    marketCap: '342,677,468,113',
-                    volume: '34,154,900,735'
-                },
-                {
-                    id: 2,
-                    name: 'Ethereum',
-                    code: 'ETH',
-                    price: '910.99',
-                    day: '-16.18%',
-                    week: '-41.04%',
-                    marketCap: '110,431,019,114',
-                    volume: '16,827,166,935'
-                }
-            ]
+            // listas das principais criptomoedas
+            listaCriptomoedas: []
         }
     },
 
     // inserindo dados da lista principal na lista de pesquisa
     mounted() {
-        this.criptoCurrencyFiltrada = this.criptoCurrency
+        // pegando dados das principais criptomoedas do mercado e inserindo no array
+        api.get('/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=7&page=1&sparkline=false').then(response => {
+            // console.log(response.data)
+            this.listaCriptomoedas = response.data
+        })
+
+        // pegando dados das criptomoedas do mercado e inserindo no array de pesquisa
+        api.get('/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=50&page=1&sparkline=false').then(response => {
+            // console.log(response.data)
+            this.criptomoedaFiltrada = response.data
+            this.listaCriptomoedasParaFiltrar = response.data
+        })
+
     },
 
     // criando um filtro para fazer a pesquisa da criptomoeda
     watch: {
-        criptomoeda(novo) {
-            this.criptoCurrencyFiltrada = this.criptoCurrency.filter(reg => reg.name.toLowerCase().includes(novo.toLowerCase()))
+        inputCriptomoeda(novo) {
+            this.criptomoedaFiltrada = this.listaCriptomoedasParaFiltrar.filter(reg => reg.name.toLowerCase().includes(novo.toLowerCase()))
             console.log(novo)
         }
     },
