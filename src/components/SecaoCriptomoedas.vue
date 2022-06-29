@@ -56,9 +56,10 @@
 
                         <td class="py-3 d-md-table-cell d-none text-start"><strong>R$</strong> {{ item.current_price }}</td>
                         
-                        <td class="py-3 text-end text-md-center">
-                            {{ item.price_change_24h }}<br>
-                            <span class="d-block d-md-none mt-1 fw-bold">
+                        <td class="py-3 text-end text-md-center fw-bold">
+                            <!-- diminuindo a quantidade de numeros depois do ponto -->
+                            {{ parseFloat(item.market_cap_change_percentage_24h.toFixed(2)) }}%<br>
+                            <span class="d-block d-md-none mt-1">
                                 R$
                                 {{ item.current_price }}
                             </span>
@@ -80,9 +81,10 @@
 
                         <td class="py-3 d-md-table-cell d-none text-start"><strong>R$</strong> {{ item.current_price }}</td>
                         
-                        <td class="py-3 text-end text-md-center">
-                            {{ item.price_change_24h }}<br>
-                            <span class="d-block d-md-none mt-1 fw-bold">
+                        <td class="py-3 text-end text-md-center fw-bold">
+                            <!-- diminuindo a quantidade de numeros depois do ponto -->
+                            {{ parseFloat(item.market_cap_change_percentage_24h.toFixed(2)) }}%<br>
+                            <span class="d-block d-md-none mt-1">
                                 R$
                                 {{ item.current_price }}
                             </span>
@@ -104,9 +106,10 @@
 
                         <td class="py-3 d-md-table-cell d-none text-start"><strong>R$</strong> {{ item.current_price }}</td>
                         
-                        <td class="py-3 text-end text-md-center">
-                            {{ item.price_change_24h }}<br>
-                            <span class="d-block d-md-none mt-1 fw-bold">
+                        <td class="py-3 text-end text-md-center fw-bold">
+                            <!-- diminuindo a quantidade de numeros depois do ponto -->
+                            {{ parseFloat(item.market_cap_change_percentage_24h.toFixed(2)) }}%<br>
+                            <span class="d-block d-md-none mt-1">
                                 R$
                                 {{ item.current_price }}
                             </span>
@@ -128,9 +131,10 @@
 
                         <td class="py-3 d-md-table-cell d-none text-start"><strong>R$</strong> {{ item.current_price }}</td>
                         
-                        <td class="py-3 text-end text-md-center">
-                            {{ item.price_change_24h }}<br>
-                            <span class="d-block d-md-none mt-1 fw-bold">
+                        <td class="py-3 text-end text-md-center fw-bold">
+                            <!-- diminuindo a quantidade de numeros depois do ponto -->
+                            {{ parseFloat(item.market_cap_change_percentage_24h.toFixed(2)) }}%<br>
+                            <span class="d-block d-md-none mt-1">
                                 R$
                                 {{ item.current_price }}
                             </span>
