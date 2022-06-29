@@ -8,38 +8,32 @@
                 <div class="col-lg-6">
                     <section class="rounded">
                         <div class="headerCripto">
-                            <span class="imgCripto"><i class="fa-brands fa-bitcoin"></i></span>
-                            <span class="tituloCripto">{{ criptoCurrency[0].name }} <span>{{ criptoCurrency[0].code }}</span></span>
+                            <span class="imgCripto"><img :src="linkImageBtc" :alt="bitcoinList.name"></span>
+                            <span class="tituloCripto">{{ bitcoinList.name }} <span class="text-uppercase">{{ bitcoinList.symbol }}</span></span>
                         </div>
                         <hr class="mt-2">
                         <div class="secaoCripto">
-                            <span class="itemCripto">Valor <span>{{ criptoCurrency[0].price }}</span></span>
-                            <span class="itemCripto">24H% <span>{{ criptoCurrency[0].day }}</span></span>
+                            <span class="itemCripto">Valor R$<span>{{ precoBtc }}</span></span>
+                            <span class="itemCripto">Volume R$<span>{{ volumeBtc }}</span></span>
                             <p class="w-100 m-1"></p>
-                            <span class="itemCripto">Volume <span>{{ criptoCurrency[0].volume }}</span></span>
-                            <span class="itemCripto">7d% <span>{{ criptoCurrency[0].week }}</span></span>
-                            <p class="w-100 m-0"></p>
-                            <p class="m-1"> &nbsp;</p>
-                            <span class="itemCripto">Capitalizado de mercado <span>{{ criptoCurrency[0].marketCap }}</span></span>
+                            <span class="itemCripto">7d<span>{{ porcentagemMudancaSemanalBtc }}%</span></span>
+                            <span class="itemCripto">Cap. Mercado R$<span>{{ capitalizadoBtc }}</span></span>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-6">
                     <section class="rounded">
                         <div class="headerCripto">
-                            <span class="imgCripto"><i class="fa-brands fa-ethereum"></i></span>
-                            <span class="tituloCripto">{{ criptoCurrency[1].name }} <span>{{ criptoCurrency[1].code }}</span></span>
+                            <span class="imgCripto"><img :src="linkImageEth" :alt="ethereumList.name"></span>
+                            <span class="tituloCripto">{{ ethereumList.name }} <span class="text-uppercase">{{ ethereumList.symbol }}</span></span>
                         </div>
                         <hr class="mt-2">
                         <div class="secaoCripto">
-                            <span class="itemCripto">Valor <span>{{ criptoCurrency[1].price }}</span></span>
-                            <span class="itemCripto">24H% <span>{{ criptoCurrency[1].day }}</span></span>
+                            <span class="itemCripto">Valor <span>{{ precoEth }}</span></span>
+                            <span class="itemCripto">Volume <span>{{ volumeEth }}</span></span>
                             <p class="w-100 m-1"></p>
-                            <span class="itemCripto">Volume <span>{{ criptoCurrency[1].volume }}</span></span>
-                            <span class="itemCripto">7d% <span>{{ criptoCurrency[1].week }}</span></span>
-                            <p class="w-100 m-0"></p>
-                            <p class="m-1"> &nbsp;</p>
-                            <span class="itemCripto">Capitalizado de mercado <span>{{ criptoCurrency[1].marketCap }}</span></span>
+                            <span class="itemCripto">7d<span>{{ porcentagemMudancaSemanalEth }}%</span></span>
+                            <span class="itemCripto">Cap. Mercado R$<span>{{ capitalizadoEth }}</span></span>
                         </div>
                     </section>
                 </div>
@@ -49,35 +43,60 @@
 </template>
 
 <script>
+// buscando localizacao da api
+import api from '@/services/api.js';
+
 export default {
     name: 'SecaoPrincipal',
     data() {
         return {
-            // listas das criptomoedas
-            criptoCurrency: [
-                {
-                    id: 1,
-                    name: 'Bitcoin',
-                    code: 'BTC',
-                    price: '17,968.59',
-                    day: '-12.69%',
-                    week: '-37.13%',
-                    marketCap: '342,677,468,113',
-                    volume: '34,154,900,735'
-                },
-                {
-                    id: 2,
-                    name: 'Ethereum',
-                    code: 'ETH',
-                    price: '910.99',
-                    day: '-16.18%',
-                    week: '-41.04%',
-                    marketCap: '110,431,019,114',
-                    volume: '16,827,166,935'
-                }
-            ]
+            // lista da criptomoeda btc
+            bitcoinList: [],
+
+            // retornando dados da api do btc
+            precoBtc: '',
+            porcentagemMudancaDiaBtc: '',
+            volumeBtc: '',
+            porcentagemMudancaSemanalBtc: '',
+            capitalizadoBtc: '',
+            linkImageBtc: '',
+
+            // lista da criptomoeda eth
+            ethereumList: [],
+
+            // retornando dados da api do eth
+            precoEth: '',
+            porcentagemMudancaDiaEth: '',
+            volumeEth: '',
+            porcentagemMudancaSemanalEth: '',
+            capitalizadoEth: '',
+            linkImageEth: ''
         }
     },
+
+    mounted() {
+        // retornando dados da api do btc
+        api.get('https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false').then(response => {
+            this.bitcoinList = response.data
+            this.precoBtc = this.bitcoinList.market_data.current_price.brl
+            this.porcentagemMudancaDiaBtc = parseFloat(this.bitcoinList.market_data.market_cap_change_percentage_24h.toFixed(2))
+            this.volumeBtc = this.bitcoinList.market_data.total_volume.brl
+            this.porcentagemMudancaSemanalBtc = parseFloat(this.bitcoinList.market_data.price_change_percentage_7d.toFixed(2))
+            this.capitalizadoBtc = this.bitcoinList.market_data.market_cap.brl
+            this.linkImageBtc = this.bitcoinList.image.thumb
+        })
+
+        // retornando dados da api do eth
+        api.get('https://api.coingecko.com/api/v3/coins/ethereum?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false').then(response => {
+            this.ethereumList = response.data
+            this.precoEth = this.ethereumList.market_data.current_price.brl
+            this.porcentagemMudancaDiaEth = parseFloat(this.ethereumList.market_data.market_cap_change_percentage_24h.toFixed(2))
+            this.volumeEth = this.ethereumList.market_data.total_volume.brl
+            this.porcentagemMudancaSemanalEth = parseFloat(this.ethereumList.market_data.price_change_percentage_7d.toFixed(2))
+            this.capitalizadoEth = this.ethereumList.market_data.market_cap.brl
+            this.linkImageEth = this.ethereumList.image.thumb
+        })
+    }
 }
 </script>
 

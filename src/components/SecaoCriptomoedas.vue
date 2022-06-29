@@ -154,6 +154,7 @@
 </template>
 
 <script>
+// localizacao de busca da API
 import api from '@/services/api.js';
 
 export default {
@@ -198,7 +199,6 @@ export default {
     watch: {
         inputCriptomoeda(novo) {
             this.criptomoedaFiltrada = this.listaCriptomoedasParaFiltrar.filter(reg => reg.name.toLowerCase().includes(novo.toLowerCase()))
-            console.log(novo)
         }
     },
 

@@ -28,6 +28,7 @@
 </template>
 
 <script>
+// para criar a animacao
 import gsap from 'gsap'
 
 export default {
